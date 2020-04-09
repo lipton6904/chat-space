@@ -28,11 +28,15 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|log_in|string|
-||references| 
+|name|string|null: false|
+|e-mail|string|null: false, unique: true|
+|password|string|null: false|
 
-ログインに必要な情報をかく
-アソシエーションがない
+### Association
+- has_many: groups, through: :groups_users
+- has_many: groups_users
+- has_many: messeges
+
 
 ## groups_usersテーブル
 
@@ -40,24 +44,29 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-アソシエーション
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-アソシエーション
+|name|string|null: false|
+
+- has_many: users, through: :groups_users
+- has_many: groups_users
+- has_many: messeges
 
 ## messegeテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|date|date|null: false, foreign_key: true|
-|body|text|null: false, foreign_key: true|
-アソシエーション
+|image|string|
+|body|text|
 
 ### Association
 - belongs_to :group
