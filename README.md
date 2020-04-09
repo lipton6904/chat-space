@@ -23,12 +23,41 @@ Things you may want to cover:
 
 * ...
 
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|log_in|string|
+||references| 
+
+ログインに必要な情報をかく
+アソシエーションがない
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+アソシエーション
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+アソシエーション
+
+## messegeテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|date|date|null: false, foreign_key: true|
+|body|text|null: false, foreign_key: true|
+アソシエーション
 
 ### Association
 - belongs_to :group
