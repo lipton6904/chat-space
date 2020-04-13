@@ -1,0 +1,28 @@
+.side-bar
+  .side-bar__user-name
+    .side-bar__user-name__side-box
+      %p.side-bar__user-name__side-box__nick-name
+        abcdef
+      %ul.side-bar__user-name__side-box__memo
+        %li
+          = link_to "#", class: "side-bar__user-name__side-box__memo__new-group" do
+            = icon('far', 'edit')
+        %li
+          = link_to "#", class: "side-bar__user-name__side-box__memo__edit-account" do
+            = icon("fas", "cog")  
+  .side-bar__group-list
+    %ul.side-bar__group-list__group-box
+      %li.side-bar__group-list__group-box__group-name
+        TECH CAMP
+      %li.side-bar__group-list__group-box__new-messege
+        まだメッセージがありません。
+    %ul.side-bar__group-list__group-box
+      %li.side-bar__group-list__group-box__group-name
+        TECH CAMP
+      %li.side-bar__group-list__group-box__new-messege
+        まだメッセージがありません。
+    %ul.side-bar__group-list__group-box
+      %li.side-bar__group-list__group-box__group-name
+        TECH CAMP
+      %li.side-bar__group-list__group-box__new-messege
+        まだメッセージがありません。
