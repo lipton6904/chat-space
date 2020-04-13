@@ -1,0 +1,42 @@
+.chat-main
+  .chat-main__group-info
+    %h2.chat-main__group-info__header-leftbox
+      test
+      %ul.chat-main__group-info__header-leftbox__current-group
+        %li.chat-main__group-info__header-leftbox__current-group__member-list
+          Member：
+        %li.chat-main__group-info__header-leftbox__current-group__member
+          いいいい
+    = link_to "#", class: "chat-main__group-info__edit-btn" do
+      .chat-main__group-info__edit-btn__text
+        Edit
+  .chat-main__messege-list
+    %ul.chat-main__messege-list__post
+      %li.chat-main__messege-list__post__user-name
+        lipton
+      %li.chat-main__messege-list__post__date-time
+        2020/04/11(Sat) 20:37:47
+    .chat-main__messege-list__text
+      test  test
+    %ul.chat-main__messege-list__post
+      %li.chat-main__messege-list__post__user-name
+        lipton
+      %li.chat-main__messege-list__post__date-time
+        2020/04/11(Sat) 20:37:47
+    .chat-main__messege-list__text
+      test  test
+    %ul.chat-main__messege-list__post
+      %li.chat-main__messege-list__post__user-name
+        lipton
+      %li.chat-main__messege-list__post__date-time
+        2020/04/11(Sat) 20:37:47
+    .chat-main__messege-list__text
+      test  test
+  .chat-main__messege-form
+    %form.chat-main__messege-form__new-comment
+      .chat-main__messege-form__new-comment__comment-box
+        %input{type: "text", class: "chat-main__messege-form__new-comment__comment-box__input-text", placeholder: "type a messege"}
+        %label{class: "chat-main__messege-form__new-comment__comment-box__input-img"}
+          = icon("far", "image")
+          %input{type: "file", class:"chat-main__messege-form__new-comment__comment-box__input-img__file"}
+      %input{type: "submit", class:"chat-main__messege-form__new-comment__submit-btn", value: "Send"}
