@@ -51,8 +51,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
-     gem 'rspec'
-end
+  gem 'rspec'
 
 # テスト環境にのみ必要
 group :test do 
