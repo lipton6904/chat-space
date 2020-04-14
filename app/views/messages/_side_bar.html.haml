@@ -2,14 +2,14 @@
   .side-bar__user-name
     .side-bar__user-name__side-box
       %p.side-bar__user-name__side-box__nick-name
-        abcdef
+        = current_user.name
       %ul.side-bar__user-name__side-box__memo
         %li
           = link_to "#", class: "side-bar__user-name__side-box__memo__new-group" do
             = icon('far', 'edit')
         %li
-          = link_to "#", class: "side-bar__user-name__side-box__memo__edit-account" do
-            = icon("fas", "cog")  
+          = link_to edit_user_path(current_user) do
+            = icon("fas", "cog", class: "side-bar__user-name__side-box__memo__edit-account")
   .side-bar__group-list
     %ul.side-bar__group-list__group-box
       %li.side-bar__group-list__group-box__group-name
