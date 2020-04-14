@@ -1,7 +1,10 @@
 @import "reset";
+@import "config/colors";
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
+@import "modules/flash";
 
 @mixin display {
   display: flex;
@@ -63,6 +66,7 @@ a {
     width: calc(100% - 300px);
     &__group-info {
       @include display;
+      border-bottom: 1px solid #eee;
       height: 100px;
       padding: 0 40px;
       &__header-leftbox {

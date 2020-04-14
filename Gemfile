@@ -51,7 +51,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
-  gem 'rspec'
 
 # テスト環境にのみ必要
 group :test do 
@@ -68,3 +67,4 @@ gem 'haml-rails'
 gem "better_errors"
 gem "binding_of_caller"
 gem 'font-awesome-sass'
+gem 'devise'
