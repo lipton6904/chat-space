@@ -5,15 +5,18 @@
 @import "font-awesome";
 @import "modules/user";
 @import "modules/flash";
+@import "modules/group";
 
 @mixin display {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-a {
+a:link, a:visited, a:hover, a:active {
+  color: #fff;
   text-decoration: none;
 }
+
 .wrapper {
   display: flex;
   margin: 0 auto;
