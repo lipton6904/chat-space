@@ -69,3 +69,7 @@ gem "binding_of_caller"
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
+
+# Image Uploader
+gem 'carrierwave'
+gem 'mini_magick'
