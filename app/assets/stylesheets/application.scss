@@ -101,7 +101,7 @@ a:link, a:visited, a:hover, a:active {
         }
       }
     }
-    &__messege-list {
+    &__message-list {
       overflow: scroll;
       padding-left: 40px;
       height: calc(100vh - 190px);
@@ -126,37 +126,41 @@ a:link, a:visited, a:hover, a:active {
         font-size: 14px;
       }
     }
-    &__messege-form {
+    &__message-form {
       @include display;
       padding: 0 40px;
       height: 90px;
       background-color: #ddd;
-      &__new-comment {
+      .new_message {
         @include display;
+        height: 50px;
         width: 100%;
-        &__comment-box {
-          position: relative;
+        position: relative;
+        .chat-main__message-form__input-text {
+          padding: 0 10px;
+          height: 50px;
           width: 100%;
-          &__input-text {
-            padding: 0 10px;
-            height: 50px;
-            width: 100%;
-            border-style: none;
-            box-sizing: border-box;
-          }
-          &__input-img {
-            position: absolute;
-            cursor: pointer;
-            right: 10px;
-            top: 10px;
-            color:black;
-            font-size: 1.3em;
-            &__file{
-            display: none;
+          border-style: none;
+          box-sizing: border-box;
+          
+        }
+        .chat-main__message-form__mask {              
+          @include display;
+          position: absolute;
+          right: 125px;
+          top: 15px;
+          .chat-main__message-form__mask__image-box {
+            .chat-main__message-form__mask__input-img {
+              cursor: pointer;
+              color:black;
+              font-size: 1.3em;
+            }
+            .chat-main__message-form__mask__file{
+              display: none;
             }
           }
         } 
-        &__submit-btn {
+        .chat-main__message-form__submit-btn {
           cursor: pointer;
           padding: 0 30px;
           margin-left: 15px;
@@ -164,8 +168,8 @@ a:link, a:visited, a:hover, a:active {
           width: 100px;
           background-color: #38aef0;
           color: #fff;  
-        }
-      } 
+        } 
+      }
     }
   }
 }
