@@ -4,6 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
 
   process convert: 'jpg'
+  process resize_to_fit: [300, 200]
 
   # 保存するディレクトリ名
   def store_dir
