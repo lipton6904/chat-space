@@ -53,13 +53,13 @@ end
 
 
 # テスト環境にのみ必要
-group :test do 
-     gem 'rspec'
+group :test do   
+  gem 'rspec'
 end
 
 # 本番環境にのみ必要
 group :production do 
-     gem 'unicorn'
+  gem 'unicorn'
 end
 
 # Hamlの導入
@@ -73,3 +73,10 @@ gem 'pry-rails'
 # Image Uploader
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
+end
