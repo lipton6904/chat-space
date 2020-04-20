@@ -107,7 +107,6 @@ a:link, a:visited, a:hover, a:active {
       height: calc(100vh - 190px);
       background-color: #fafafa;
       &__post {
-        display: flex;
         padding-top: 35px;
         &__user-name {
           font-weight: bold;
@@ -119,11 +118,11 @@ a:link, a:visited, a:hover, a:active {
           color: #999;
           font-size: 12px;
         }
-      }
-      &__text {
-        margin: 12px 0 46px;
-        color: #434a54;
-        font-size: 14px;
+        &__text {
+          margin: 12px 0 46px;
+          color: #434a54;
+          font-size: 14px;
+        }
       }
     }
     &__message-form {
