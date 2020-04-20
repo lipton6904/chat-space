@@ -1,51 +1,52 @@
 $(function(){
+
   function buildHtml(message){
     if (message.content && message.image) {
-      let html = `<div class="chat-main__message-list__post">
+      let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
                     <div class="chat-main__message-list__post__user-name">
                     ${message.user_name}
                     </div>
                     <div class="chat-main__message-list__post__date-time">
                     ${message.created_at}
                     </div>
-                  </div>
-                  <div class="chat-main__message-list__text">
-                    <p class="chat-main__message-list__text__content">
-                    ${message.content}
-                    </p>
-                    <img class="chat-main__message-list__text__content__image" src= ${message.image}>
-                  </div>`
+                    <div class="chat-main__message-list__post__text">
+                      <p class="chat-main__message-list__post__text__content">
+                      ${message.content}
+                      </p>
+                      <img class="chat-main__message-list__post__text__content__image" src= ${message.image}>
+                    </div>
+                  </div>`       
       return html;
     } else if (message.content) {
-      let html = `<div class="chat-main__message-list__post">
+      let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
                     <div class="chat-main__message-list__post__user-name">
                     ${message.user_name}
                     </div>
                     <div class="chat-main__message-list__post__date-time">
                     ${message.created_at}
                     </div>
-                  </div>
-                  <div class="chat-main__message-list__text">
-                    <p class="chat-main__message-list__text__content">
-                    ${message.content}
-                    </p>
+                    <div class="chat-main__message-list__post__text">
+                      <p class="chat-main__message-list__post__text__content">
+                      ${message.content}
+                      </p>
+                    </div>
                   </div>`
       return html;
     } else if (message.image) {
-      let html = `<div class="chat-main__message-list__post">
+      let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
                     <div class="chat-main__message-list__post__user-name">
                     ${message.user_name}
                     </div>
                     <div class="chat-main__message-list__post__date-time">
                     ${message.created_at}
+                    </div>              
+                    <div class="chat-main__message-list__post__text">
+                    <img class="chat-main__message-list__post__text__content__image" src= ${message.image}>
                     </div>
-                  </div>
-                  <div class="chat-main__message-list__text">
-                    <img class="chat-main__message-list__text__content__image" src= ${message.image}>
                   </div>`
       return html;
     };
-    }
+  }
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault()
@@ -70,5 +71,30 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
-});
 
+  let reloadMessages = function() {
+    let last_message_id = $('.chat-main__message-list__post:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        let insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHtml(message)
+        });
+        $('.chat-main__message-list').append(insertHTML);
+        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+      }     
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
+});
