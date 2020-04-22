@@ -3,11 +3,13 @@ $(function(){
   function buildHtml(message){
     if (message.content && message.image) {
       let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
-                    <div class="chat-main__message-list__post__user-name">
-                    ${message.user_name}
-                    </div>
-                    <div class="chat-main__message-list__post__date-time">
-                    ${message.created_at}
+                    <div class="chat-main__message-list__post__comment">
+                      <div class="chat-main__message-list__post__comment__user-name">
+                      ${message.user_name}
+                      </div>
+                      <div class="chat-main__message-list__post__comment__date-time">
+                      ${message.created_at}
+                      </div>
                     </div>
                     <div class="chat-main__message-list__post__text">
                       <p class="chat-main__message-list__post__text__content">
@@ -19,11 +21,13 @@ $(function(){
       return html;
     } else if (message.content) {
       let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
-                    <div class="chat-main__message-list__post__user-name">
-                    ${message.user_name}
-                    </div>
-                    <div class="chat-main__message-list__post__date-time">
-                    ${message.created_at}
+                    <div class="chat-main__message-list__post__comment">
+                      <div class="chat-main__message-list__post__comment__user-name">
+                      ${message.user_name}
+                      </div>
+                      <div class="chat-main__message-list__post__comment__date-time">
+                      ${message.created_at}
+                      </div>
                     </div>
                     <div class="chat-main__message-list__post__text">
                       <p class="chat-main__message-list__post__text__content">
@@ -34,12 +38,14 @@ $(function(){
       return html;
     } else if (message.image) {
       let html = `<div class="chat-main__message-list__post" data-message-id=${message.id}>
-                    <div class="chat-main__message-list__post__user-name">
-                    ${message.user_name}
-                    </div>
-                    <div class="chat-main__message-list__post__date-time">
-                    ${message.created_at}
-                    </div>              
+                    <div class="chat-main__message-list__post__comment">
+                      <div class="chat-main__message-list__post__comment__user-name">
+                      ${message.user_name}
+                      </div>
+                      <div class="chat-main__message-list__post__comment__date-time">
+                      ${message.created_at}
+                      </div>
+                    </div>             
                     <div class="chat-main__message-list__post__text">
                     <img class="chat-main__message-list__post__text__content__image" src= ${message.image}>
                     </div>

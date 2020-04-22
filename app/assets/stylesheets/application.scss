@@ -108,15 +108,18 @@ a:link, a:visited, a:hover, a:active {
       background-color: #fafafa;
       &__post {
         padding-top: 35px;
-        &__user-name {
-          font-weight: bold;
-          color: #333;
-          font-size: 16px;
-        }
-        &__date-time {
-          margin-left: 5px;
-          color: #999;
-          font-size: 12px;
+        &__comment {
+          display: flex;
+          &__user-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+          }
+          &__date-time {
+            margin-left: 5px;
+            color: #999;
+            font-size: 12px;
+          }
         }
         &__text {
           margin: 12px 0 46px;

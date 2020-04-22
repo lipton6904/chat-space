@@ -1,8 +1,9 @@
 .chat-main__message-list__post{data: {message: {id: message.id}}}
-  .chat-main__message-list__post__user-name
-    = message.user.name
-  .chat-main__message-list__post__date-time
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chat-main__message-list__post__comment
+    .chat-main__message-list__post__comment__user-name
+      = message.user.name
+    .chat-main__message-list__post__comment__date-time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .chat-main__message-list__post__text
     - if message.content.present?
       %p.chat-main__message-list__post__text__content
