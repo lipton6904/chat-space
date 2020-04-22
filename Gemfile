@@ -70,6 +70,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
 
+
 # Image Uploader
 gem 'carrierwave'
 gem 'mini_magick'
@@ -79,6 +80,12 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+
 end
 
 gem 'jquery-rails'
