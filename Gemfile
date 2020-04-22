@@ -89,3 +89,4 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
+gem 'fog-aws'

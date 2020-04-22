@@ -1,7 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  storage :file
+  storage :fog
 
   process convert: 'jpg'
   process resize_to_fit: [400,400]
